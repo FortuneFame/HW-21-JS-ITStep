@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>Task 2</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        h1 {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            margin: auto;
+        }
+
+        #firstname,
+        #lastname,
+        #birthday {
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 265px;
+        }
+
+        select {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 285px;
+        }
+
+
+        .flex {
+            display: flex;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .submit {
+            background-color: #4CAF50;
+            width: 100%;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .user-info {
+            margin-top: 50px;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-info h2 {
+            margin-top: 0;
+        }
+
+        .user-info p {
+            margin-bottom: 10px;
+        }
+
+        .user-info strong {
+            font-weight: bold;
+        }
+
+        .userSkills {
+            display: flex;
+            align-items: baseline;
+            justify-content: center
+        }
+
+        .user {
+            margin-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        .userBirthday {
+            margin-right: 20px;
+        }
+
+        .lable {
+            margin-left: 0;
+        }
+
+        .line {
+            height: max-content;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .country {
+            width: 285px;
+            margin-right: 20px;
+        }
+
+        .accommodation {
+            margin-bottom: 20px;
+        }
+
+        input[type="checkbox"] {
+            margin: 0;
+            margin-left: 20px;
+        }
+
+        .userSkills label {
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        .userGender label {
+            margin-right: 20px;
+        }
+
+        .userGender input {
+            margin-right: 10px;
+        }
+
+        #user-table {
+            display: none;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #user-table h2 {
+            margin-top: 0;
+        }
+
+        #user-table p {
+            margin-bottom: 10px;
+
+        }
+
+        #user-table strong {
+            font-weight: bold;
+        }
+
+        #user-table th {
+            text-align: left;
+            padding: 5px;
+        }
+
+        #user-table td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>User Information Form</h1>
+    <form id="user-form" action="" method="post">
+        <div class="user flex">
+            <div class="firstname">
+                <label for="firstname">Firstname:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="lastname">
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+        </div>
+        <div class="flex line">
+            <div class="userBirthday flex column">
+                <label class="lable" for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday" min="1920-01-01" required>
+            </div>
+
+            <div class="userGender flex">
+                <label for="gender">Gender:</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+
+        <div class="accommodation flex">
+            <div class="country">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="UK">UK</option>
+                </select>
+            </div>
+
+            <div class="city">
+                <label for="city">City:</label>
+                <select id="city" name="city" required>
+                    <option value="">Select City</option>
+                    <option value="New York">New York</option>
+                    <option value="Toronto">Toronto</option>
+                    <option value="Sydney">Sydney</option>
+                    <option value="London">London</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="userSkills">
+            <h3>Skills:</h3>
+            <input type="checkbox" id="html" name="skills" value="HTML">
+            <label for="html">HTML</label>
+            <input type="checkbox" id="css" name="skills" value="CSS">
+            <label for="css">CSS</label>
+            <input type="checkbox" id="js" name="skills" value="JS">
+            <label for="js">JS</label>
+            <input type="checkbox" id="php" name="skills" value="PHP">
+            <label for="php">PHP</label>
+            <input type="checkbox" id="cplus" name="skills" value="C++">
+            <label for="cplus">C++</label>
+            <input type="checkbox" id="java" name="skills" value="JAVA">
+            <label for="java">JAVA</label>
+            <input type="checkbox" id="csharp" name="skills" value="C#">
+            <label for="csharp">C#
+        </div>
+
+        <button class="submit" type="submit" value="Save">Save</button>
+    </form>
+
+    <table id="user-table" style="display:none">
+        <tr>
+            <th>Firstname</th>
+            <td id="firstname-info"></td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <td id="lastname-info"></td>
+        </tr>
+        <tr>
+            <th>Birthday</th>
+            <td id="birthday-info"></td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td id="gender-info"></td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td id="country-info"></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td id="city-info"></td>
+        </tr>
+        <tr>
+            <th>Skills</th>
+            <td id="skills-info"></td>
+        </tr>
+    </table>
+
+    <script>
+
+        const form = document.getElementById("user-form");
+        const firstnameInput = document.getElementById("firstname");
+        const lastnameInput = document.getElementById("lastname");
+        const birthdayInput = document.getElementById("birthday");
+        const genderInputs = document.getElementsByName("gender");
+        const countrySelect = document.getElementById("country");
+        const citySelect = document.getElementById("city");
+        const skillsInputs = document.getElementsByName("skills");
+
+        const userTable = document.getElementById("user-table");
+        const firstnameInfo = document.getElementById("firstname-info");
+        const lastnameInfo = document.getElementById("lastname-info");
+        const birthdayInfo = document.getElementById("birthday-info");
+        const genderInfo = document.getElementById("gender-info");
+        const countryInfo = document.getElementById("country-info");
+        const cityInfo = document.getElementById("city-info");
+        const skillsInfo = document.getElementById("skills-info");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (firstnameInput.value.trim() === "" ||
+                lastnameInput.value.trim() === "" ||
+                birthdayInput.value === "" ||
+                countrySelect.value === "" ||
+                citySelect.value === "") {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            let gender = "";
+            for (let i = 0; i < genderInputs.length; i++) {
+                if (genderInputs[i].checked) {
+                    gender = genderInputs[i].value;
+                    break;
+                }
+            }
+
+            let skills = [];
+            for (let i = 0; i < skillsInputs.length; i++) {
+                if (skillsInputs[i].checked) {
+                    skills.push(skillsInputs[i].value);
+                }
+            }
+
+            firstnameInfo.textContent = firstnameInput.value;
+            lastnameInfo.textContent = lastnameInput.value;
+            birthdayInfo.textContent = birthdayInput.value;
+            genderInfo.textContent = gender;
+            countryInfo.textContent = countrySelect.value;
+            cityInfo.textContent = citySelect.value;
+            skillsInfo.textContent = skills.join(", ");
+
+            userTable.style.display = "table";
+
+            form.reset();
+        });
+    </script>
+</body>
+
+</html>
